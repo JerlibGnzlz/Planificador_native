@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <SafeAreaView style={styles.header}>
             <Text style={styles.texto}>
-                Planificador de gastos..!
+                Planificador de gastos
             </Text>
         </SafeAreaView>
     )
