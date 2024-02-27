@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, SafeAreaView } from 'react-native'
 
 const Header = () => {
     return (
-        <SafeAreaView style={styles.header}>
+        <SafeAreaView >
             <Text style={styles.texto}>
                 Planificador de gastos
             </Text>
@@ -22,9 +22,12 @@ const styles = StyleSheet.create({
         color: "#fff",
         textTransform: "uppercase",
         fontWeight: "bold",
-        paddingVertical: 20
+        paddingTop: 20
 
-    }
+    },
+    header: {
+        backgroundColor: '#3b82f6',
+    },
 });
 
 export default Header
