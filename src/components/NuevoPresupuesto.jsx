@@ -4,16 +4,19 @@ import { StyleSheet, Text, View, Pressable, TextInput } from 'react-native'
 const NuevoPresupuesto = () => {
     return (
         <View style={styles.contenedor}>
-            <Text>
+            <Text style={styles.label}>
                 Definir Presupuesto
             </Text>
 
             <TextInput
+                style={styles.input}
+                placeholder="Agrega tu presupuesto Ej:... 300"
+                keyboardType="numeric"
 
             />
 
-            <Pressable>
-                <Text>
+            <Pressable >
+                <Text style={styles.botonTexto}>
                     Agregar presupuesto
                 </Text>
             </Pressable>
@@ -36,9 +39,36 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.32,
         shadowRadius: 5.46,
-
         elevation: 9,
-    }
+    },
+    input: {
+        backgroundColor: "#f5f5f5",
+        padding: 10,
+        borderRadius: 10,
+        textAlign: 'center',
+        marginTop: 30,
+
+    },
+    label: {
+        textAlign: 'center',
+        color: "blue",
+        marginBottom: 10,
+        marginTop: 30,
+        fontSize: 24,
+        fontWeight: "600"
+    },
+    botonTexto: {
+        color: "#fff",
+        textAlign: 'center',
+        marginVertical: 20,
+        backgroundColor: "#f59E0B",
+        borderRadius: 10,
+        padding: 15,
+        marginTop: 30,
+        backgroundColor: "#1048a4",
+        fontWeight: "700",
+        textTransform: 'uppercase',
+    },
 
 });
 
