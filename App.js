@@ -1,13 +1,16 @@
+import { useState } from 'react';
 import { StyleSheet, Text, View, Alert } from 'react-native';
 import Header from './src/components/Header';
 import NuevoPresupuesto from './src/components/NuevoPresupuesto';
+import ControlPresupuesto from './src/components/ControlPresupuesto.jsx';
 
 export default function App() {
 
+  const [isvalidPresupuesto, setIsvalidPresupuesto] = useState(false);
 
   const handlePresupuesto = (presupuesto) => {
     if (presupuesto > 0) {
-      console.log("Presupuesto valido");
+      setIsvalidPresupuesto(true);
 
     } else {
       Alert.alert("Error", "El presupuesto no puede ser 0 o menor");
@@ -20,9 +23,15 @@ export default function App() {
 
       <View style={styles.header}>
         <Header />
-        <NuevoPresupuesto
-          handlePresupuesto={handlePresupuesto}
-        />
+
+        {
+          isvalidPresupuesto
+            ?
+            (<ControlPresupuesto />)
+            :
+            (<NuevoPresupuesto handlePresupuesto={handlePresupuesto}
+            />)
+        }
       </View>
     </View>
   );
