@@ -1,7 +1,13 @@
-import { StyleSheet, Text, View, Pressable, TextInput } from 'react-native'
+import { useState } from "react";
+import { StyleSheet, Text, View, Pressable, TextInput } from 'react-native';
 
 
-const NuevoPresupuesto = () => {
+const NuevoPresupuesto = ({ handlePresupuesto }) => {
+
+    const [presupuesto, setPresupuesto] = useState(0);
+
+
+
     return (
         <View style={styles.contenedor}>
             <Text style={styles.label}>
@@ -12,17 +18,21 @@ const NuevoPresupuesto = () => {
                 style={styles.input}
                 placeholder="Agrega tu presupuesto Ej:... 300"
                 keyboardType="numeric"
+                value={presupuesto.toString()}
+                onChangeText={setPresupuesto}
 
             />
 
-            <Pressable >
+            <Pressable
+                onPress={() => handlePresupuesto(presupuesto)}
+            >
                 <Text style={styles.botonTexto}>
                     Agregar presupuesto
                 </Text>
             </Pressable>
         </View>
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     contenedor: {
@@ -74,4 +84,4 @@ const styles = StyleSheet.create({
 
 
 
-export default NuevoPresupuesto
+export default NuevoPresupuesto;
