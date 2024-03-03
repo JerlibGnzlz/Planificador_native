@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { StyleSheet, Text, View, Pressable, TextInput } from 'react-native';
-
+import { globalStyles } from "../styles";
 
 const NuevoPresupuesto = ({ handlePresupuesto }) => {
 
@@ -36,20 +36,7 @@ const NuevoPresupuesto = ({ handlePresupuesto }) => {
 
 const styles = StyleSheet.create({
     contenedor: {
-        backgroundColor: "#fff",
-        marginHorizontal: 20,
-        paddingHorizontal: 20,
-        paddingVertical: 20,
-        borderRadius: 10,
-        transform: [{ translateY: 50 }],
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 4,
-        },
-        shadowOpacity: 0.32,
-        shadowRadius: 5.46,
-        elevation: 9,
+        ...globalStyles.contenedor
     },
     input: {
         backgroundColor: "#f5f5f5",
@@ -57,7 +44,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         textAlign: 'center',
         marginTop: 30,
-
     },
     label: {
         textAlign: 'center',
