@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Text, View, Image, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet, Modal } from 'react-native';
 import globalStyles from '../styles';
 import { formatearCantidad } from '../helper';
 

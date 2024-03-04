@@ -2,7 +2,8 @@ import { useState } from 'react';
 import Header from './src/components/Header';
 import NuevoPresupuesto from './src/components/NuevoPresupuesto';
 import ControlPresupuesto from './src/components/ControlPresupuesto.jsx';
-import { StyleSheet, Text, View, Alert, Pressable, Image } from 'react-native';
+import FormularioGastos from './src/components/FormularioGastos.jsx';
+import { StyleSheet, Text, View, Alert, Pressable, Image, Modal } from 'react-native';
 
 export default function App() {
 
@@ -11,6 +12,9 @@ export default function App() {
   const [presupuesto, setPresupuesto] = useState(0);
 
   const [gastos, setGastos] = useState([]);
+
+  const [modal, setModal] = useState(false);
+
 
   const handlePresupuesto = (presupuesto) => {
     if (presupuesto > 0) {
@@ -43,9 +47,19 @@ export default function App() {
             />)
         }
       </View>
+      {modal && (
+
+        <Modal
+          animationtype="slide"
+          visible={modal} >
+          <FormularioGastos />
+        </Modal >
+      )}
 
       {isvalidPresupuesto && (
-        <Pressable>
+        <Pressable
+          onPress={() => setModal(!modal)}
+        >
           <Image
             style={styles.imagen}
             source={require("./src/img/nuevo-gasto.png")}
@@ -70,7 +84,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     alignSelf: "center",
-    top: 120,
+    // top: 10,
     right: 20,
     position: "absolute"
   }
