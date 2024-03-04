@@ -10,6 +10,8 @@ export default function App() {
 
   const [presupuesto, setPresupuesto] = useState(0);
 
+  const [gastos, setGastos] = useState([]);
+
   const handlePresupuesto = (presupuesto) => {
     if (presupuesto > 0) {
       setIsvalidPresupuesto(true);
@@ -31,6 +33,7 @@ export default function App() {
             ?
             (<ControlPresupuesto
               presupuesto={presupuesto}
+              gastos={gastos}
             />)
             :
             (<NuevoPresupuesto
