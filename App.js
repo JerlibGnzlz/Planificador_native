@@ -8,6 +8,8 @@ export default function App() {
 
   const [isvalidPresupuesto, setIsvalidPresupuesto] = useState(false);
 
+  const [presupuesto, setPresupuesto] = useState(0);
+
   const handlePresupuesto = (presupuesto) => {
     if (presupuesto > 0) {
       setIsvalidPresupuesto(true);
@@ -27,9 +29,14 @@ export default function App() {
         {
           isvalidPresupuesto
             ?
-            (<ControlPresupuesto />)
+            (<ControlPresupuesto
+              presupuesto={presupuesto}
+            />)
             :
-            (<NuevoPresupuesto handlePresupuesto={handlePresupuesto}
+            (<NuevoPresupuesto
+              presupuesto={presupuesto}
+              setPresupuesto={setPresupuesto}
+              handlePresupuesto={handlePresupuesto}
             />)
         }
       </View>
