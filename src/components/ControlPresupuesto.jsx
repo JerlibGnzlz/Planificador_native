@@ -1,10 +1,10 @@
 import { Text, View, Image, StyleSheet } from 'react-native';
-import { globalStyles } from '../styles';
+import globalStyles from '../styles';
 
 
 const ControlPresupuesto = () => {
   return (
-    <View style={StyleSheet.contenedor}>
+    <View style={styles.contenedor}>
       <View style={styles.centrarGrafico}>
         <Image
           style={styles.imagen}
@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   imagen: {
-    width: 250,
-    height: 250
+    width: 180,
+    height: 180
   }
 });
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { StyleSheet, Text, View, Pressable, TextInput } from 'react-native';
-import { globalStyles } from "../styles";
+import globalStyles from "../styles";
 
 const NuevoPresupuesto = ({ handlePresupuesto }) => {
 

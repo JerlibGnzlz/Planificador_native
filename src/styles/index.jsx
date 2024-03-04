@@ -1,10 +1,10 @@
-export const globalStyles = {
+const globalStyles = {
   contenedor: {
     backgroundColor: "#fff",
     marginHorizontal: 10,
     paddingHorizontal: 20,
     paddingVertical: 40,
-    borderRadius: 0,
+    borderRadius: 10,
     transform: [{ translateY: 50 }],
     shadowColor: "#000",
     shadowOffset: {
@@ -16,3 +16,5 @@ export const globalStyles = {
     elevation: 9,
   },
 };
+
+export default globalStyles;
