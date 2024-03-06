@@ -1,7 +1,9 @@
 import { SafeAreaView, Text, View, TextInput, StyleSheet, Pressable } from "react-native";
 import { Picker } from '@react-native-picker/picker';
 
+
 const FormularioGastos = () => {
+
   return (
     <SafeAreaView>
       <View>
@@ -32,7 +34,7 @@ const FormularioGastos = () => {
 
         <View>
           <Text>Categoria Gasto</Text>
-          <Picker style={styles.picker}>
+          <Picker onValueChange={(value) => console.log(value)}>
             <Picker.Item label="--Seleccione--" value="" />
             <Picker.Item label="Ahorro" value="ahorro" />
             <Picker.Item label="Comida" value="comida" />
@@ -49,9 +51,6 @@ const FormularioGastos = () => {
 
 
 const styles = StyleSheet.create({
-  picker: {
-    color: "black"
-  },
 
 });
 
