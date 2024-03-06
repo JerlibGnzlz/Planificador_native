@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   submitBtnTexto: {
     textAlign: "center",
     color: "#fff",
-    fontWeight: 700,
+    fontWeight: "700",
     textTransform: "uppercase"
   }
 });
