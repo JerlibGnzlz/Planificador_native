@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 28,
     marginVertical: 30,
+    marginBottom: 30,
     color: "#64748B"
   },
   campo: {
