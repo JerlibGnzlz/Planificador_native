@@ -51,8 +51,14 @@ export default function App() {
 
         <Modal
           animationtype="slide"
-          visible={modal} >
-          <FormularioGastos />
+          visible={modal}
+          onRequestClose={() => {
+            setModal(!modal);
+          }}
+        >
+          <FormularioGastos
+            setModal={setModal}
+          />
         </Modal >
       )}
 

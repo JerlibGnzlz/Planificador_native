@@ -4,13 +4,16 @@ import globalStyles from '../styles';
 
 
 
-const FormularioGastos = () => {
+const FormularioGastos = ({ setModal }) => {
 
   return (
     <SafeAreaView style={styles.contenedor}>
       <View>
-        <Pressable>
-          <Text>
+        <Pressable
+          onPress={() => setModal(false)}
+          style={styles.btnCancelar}
+        >
+          <Text style={styles.btnCancelarTexto}>
             Cancelar
           </Text>
         </Pressable>
@@ -99,7 +102,20 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#fff",
     fontWeight: "700",
-    textTransform: "uppercase"
+  },
+  btnCancelar: {
+    backgroundColor: "#db2777",
+    padding: 10,
+    marginTop: 30,
+    marginHorizontal: 10,
+    borderRadius: 10,
+
+  },
+  btnCancelarTexto: {
+    textTransform: "uppercase",
+    textAlign: "center",
+    color: "#fff",
+    fontWeight: "bold"
   }
 });
 
