@@ -33,6 +33,7 @@ const NuevoPresupuesto = ({ handlePresupuesto, presupuesto, setPresupuesto }) =>
 
 const styles = StyleSheet.create({
     contenedor: {
+
         ...globalStyles.contenedor
     },
     input: {

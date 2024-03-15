@@ -1,5 +1,5 @@
-import React from 'react'
-import { Text, View, StyleSheet, SafeAreaView } from 'react-native'
+import React from 'react';
+import { Text, View, StyleSheet, SafeAreaView } from 'react-native';
 
 const Header = () => {
     return (
@@ -8,8 +8,8 @@ const Header = () => {
                 Planificador de gastos
             </Text>
         </SafeAreaView>
-    )
-}
+    );
+};
 
 
 const styles = StyleSheet.create({
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         color: "#fff",
         textTransform: "uppercase",
         fontWeight: "bold",
-        paddingTop: 20
+        paddingTop: 40
 
     },
     header: {
@@ -30,4 +30,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Header
+export default Header;

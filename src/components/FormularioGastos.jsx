@@ -1,10 +1,17 @@
 import { SafeAreaView, Text, View, TextInput, StyleSheet, Pressable } from "react-native";
 import { Picker } from '@react-native-picker/picker';
 import globalStyles from '../styles';
+import { useState } from "react";
 
 
 
 const FormularioGastos = ({ setModal }) => {
+
+  const [nombre, setNombre] = useState("");
+
+  const [cantidad, setCantidad] = useState("");
+
+  const [categoria, setCategoria] = useState("");
 
   return (
     <SafeAreaView style={styles.contenedor}>
@@ -27,6 +34,8 @@ const FormularioGastos = ({ setModal }) => {
           <TextInput
             tyle={styles.input}
             placeholder="Nombre del Gato eje.. comida"
+            value={nombre}
+            onChangeText={setNombre}
           />
         </View>
 
@@ -36,13 +45,17 @@ const FormularioGastos = ({ setModal }) => {
             tyle={styles.input}
             placeholder="Cantidad de Gato eje.. $300"
             keyboardType="numeric"
+            value={cantidad}
+            onChangeText={setCantidad}
+
           />
         </View>
 
         <View style={styles.campo}>
           <Text style={styles.label}>Categoria Gasto</Text>
           <Picker
-            onValueChange={(value) => console.log(value)}>
+            selectedValue={categoria}
+            onValueChange={(value) => setCategoria(value)}>
             <Picker.Item label="--Seleccione--" value="" />
             <Picker.Item label="Ahorro" value="ahorro" />
             <Picker.Item label="Comida" value="comida" />

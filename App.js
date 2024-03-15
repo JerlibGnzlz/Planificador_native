@@ -90,7 +90,6 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     alignSelf: "center",
-    // top: 10,
     right: 20,
     position: "absolute"
   }
