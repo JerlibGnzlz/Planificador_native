@@ -21,10 +21,24 @@ export default function App() {
       setIsvalidPresupuesto(true);
 
     } else {
-      Alert.alert("Error", "El presupuesto no puede ser 0 o menor");
+      Alert.alert(
+        "Error",
+        "El presupuesto no puede ser 0 o menor"
+      );
     }
   };
 
+
+  const handleGasto = (gasto) => {
+
+    if (Object.values(gasto).includes("")) {
+      Alert.alert(
+        "Error",
+        "Hay almenos un campo vacio"
+      );
+      return;
+    }
+  };
 
   return (
     <View style={styles.contenedor}>
@@ -58,6 +72,7 @@ export default function App() {
         >
           <FormularioGastos
             setModal={setModal}
+            handleGasto={handleGasto}
           />
         </Modal >
       )}

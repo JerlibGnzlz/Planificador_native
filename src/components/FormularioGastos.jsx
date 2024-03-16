@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 
-const FormularioGastos = ({ setModal }) => {
+const FormularioGastos = ({ setModal, handleGasto }) => {
 
   const [nombre, setNombre] = useState("");
 
@@ -65,7 +65,9 @@ const FormularioGastos = ({ setModal }) => {
             <Picker.Item label="Suscrpciones" value="suscripciones" />
           </Picker>
         </View>
-        <Pressable style={styles.submitBtn}>
+        <Pressable
+          onPress={() => { handleGasto({ nombre, cantidad, categoria }); }}
+          style={styles.submitBtn}>
           <Text style={styles.submitBtnTexto}>
             Agregar Gasto
           </Text>
