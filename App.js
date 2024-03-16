@@ -4,6 +4,8 @@ import NuevoPresupuesto from './src/components/NuevoPresupuesto';
 import ControlPresupuesto from './src/components/ControlPresupuesto.jsx';
 import FormularioGastos from './src/components/FormularioGastos.jsx';
 import { StyleSheet, Text, View, Alert, Pressable, Image, Modal } from 'react-native';
+import { generarId } from './src/helper/index.jsx';
+
 
 export default function App() {
 
@@ -38,6 +40,10 @@ export default function App() {
       );
       return;
     }
+
+    gasto.id = generarId();
+    setGastos([...gastos, gasto]);
+    setModal(!modal);
   };
 
   return (
