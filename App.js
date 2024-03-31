@@ -69,7 +69,9 @@ export default function App() {
         }
       </View>
       {isvalidPresupuesto && (
-        <ListadoGasto />
+        <ListadoGasto
+          gastos={gastos}
+        />
       )}
 
       {modal && (

@@ -1,9 +1,17 @@
 import { View, Text, StyleSheet } from 'react-native';
 
-export const ListadoGasto = () => {
+export const ListadoGasto = ({ gastos }) => {
   return (
     <View style={styles.contenedor}>
       <Text style={styles.titulo}>Gastos</Text>
+
+      {gastos.length === 0
+        ? <Text>No hay gasto</Text>
+        : gastos.map(gasto => {
+
+          <Text>{gasto.nombre}</Text>;
+        })
+      }
     </View>
   );
 };
@@ -11,7 +19,6 @@ export const ListadoGasto = () => {
 const styles = StyleSheet.create({
   contenedor: {
     marginTop: 70,
-    // backgroundColor: "#551414"
   },
   titulo: {
     textAlign: "center",
