@@ -8,7 +8,7 @@ import { generarId } from './src/helper/index.jsx';
 import { ListadoGasto } from './src/components/ListadoGasto.jsx';
 
 
-export default function App() {
+export default function App () {
 
   const [isvalidPresupuesto, setIsvalidPresupuesto] = useState(false);
 
@@ -71,6 +71,7 @@ export default function App() {
       {isvalidPresupuesto && (
         <ListadoGasto
           gastos={gastos}
+
         />
       )}
 

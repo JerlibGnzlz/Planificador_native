@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native';
+import { Gasto } from './Gasto';
 
 export const ListadoGasto = ({ gastos }) => {
   return (
@@ -6,10 +7,12 @@ export const ListadoGasto = ({ gastos }) => {
       <Text style={styles.titulo}>Gastos</Text>
 
       {gastos.length === 0
-        ? <Text>No hay gasto</Text>
+        ? <Text style={styles.noGatos}>No hay gasto</Text>
         : gastos.map(gasto => {
-
-          <Text>{gasto.nombre}</Text>;
+          <Gasto
+            key={gasto.id}
+            gasto={gasto}
+          />
         })
       }
     </View>
@@ -25,5 +28,11 @@ const styles = StyleSheet.create({
     color: "#64748b",
     fontSize: 30,
     fontWeight: "400"
+  },
+  noGatos: {
+    marginTop: 20,
+    textAlign: "center",
+    fontSize: 20
+
   }
 });
