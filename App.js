@@ -37,7 +37,7 @@ export default function App () {
     if (Object.values(gasto).includes("")) {
       Alert.alert(
         "Error",
-        "Hay almenos un campo vacio"
+        "Hay al menos un campo vacio"
       );
       return;
     }
