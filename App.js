@@ -3,7 +3,7 @@ import Header from './src/components/Header';
 import NuevoPresupuesto from './src/components/NuevoPresupuesto';
 import ControlPresupuesto from './src/components/ControlPresupuesto.jsx';
 import FormularioGastos from './src/components/FormularioGastos.jsx';
-import { StyleSheet, Text, View, Alert, Pressable, Image, Modal } from 'react-native';
+import { StyleSheet, ScrollView, Text, View, Alert, Pressable, Image, Modal } from 'react-native';
 import { generarId } from './src/helper/index.jsx';
 import { ListadoGasto } from './src/components/ListadoGasto.jsx';
 
@@ -49,31 +49,34 @@ export default function App () {
 
   return (
     <View style={styles.contenedor}>
+      <ScrollView>
 
-      <View style={styles.header}>
-        <Header />
 
-        {
-          isvalidPresupuesto
-            ?
-            (<ControlPresupuesto
-              presupuesto={presupuesto}
-              gastos={gastos}
-            />)
-            :
-            (<NuevoPresupuesto
-              presupuesto={presupuesto}
-              setPresupuesto={setPresupuesto}
-              handlePresupuesto={handlePresupuesto}
-            />)
-        }
-      </View>
-      {isvalidPresupuesto && (
-        <ListadoGasto
-          gastos={gastos}
+        <View style={styles.header}>
+          <Header />
 
-        />
-      )}
+          {
+            isvalidPresupuesto
+              ?
+              (<ControlPresupuesto
+                presupuesto={presupuesto}
+                gastos={gastos}
+              />)
+              :
+              (<NuevoPresupuesto
+                presupuesto={presupuesto}
+                setPresupuesto={setPresupuesto}
+                handlePresupuesto={handlePresupuesto}
+              />)
+          }
+        </View>
+        {isvalidPresupuesto && (
+          <ListadoGasto
+            gastos={gastos}
+
+          />
+        )}
+      </ScrollView>
 
       {modal && (
 
@@ -109,17 +112,23 @@ export default function App () {
 
 const styles = StyleSheet.create({
   contenedor: {
+    backgroundColor: "#f5f5f5",
     flex: 1,
-    backgroundColor: "#f5f5f5"
   },
   header: {
     backgroundColor: '#3b82f6',
+    minHeight: 500
   },
   imagen: {
     width: 50,
     height: 50,
     alignSelf: "center",
-    right: 20,
-    position: "absolute"
-  }
+    right: 30,
+    position: "absolute",
+    bottom: 50
+  },
+  // scrollView: {
+  //   backgroundColor: 'pink',
+  //   marginHorizontal: 20,
+  // },
 });
