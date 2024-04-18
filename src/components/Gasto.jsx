@@ -14,7 +14,7 @@ const diccionarioIconos = {
 
 export const Gasto = ({ gasto }) => {
 
-    const { nombre, cantidad, categoria } = gasto
+    const { nombre, cantidad, categoria, fecha } = gasto
 
     return (
         <View style={styles.contenedor}>
@@ -26,10 +26,11 @@ export const Gasto = ({ gasto }) => {
 
                 <Text> {categoria}</Text>
                 <Text> {nombre}</Text>
+                <Text> {fecha}</Text>
+                {/* <Text style={styles.titulo} >
+                </Text> */}
+                <Text> {cantidad}</Text>
             </View>
-            <Text style={styles.titulo} >
-            </Text>
-            <Text> {cantidad}</Text>
         </View>
     )
 }

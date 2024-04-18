@@ -7,16 +7,24 @@ export const ListadoGasto = ({ gastos }) => {
       <Text style={styles.titulo}>Gastos</Text>
 
       {gastos.length === 0
-        ? <Text style={styles.noGastos}>No hay gasto</Text>
-        : gastos.map(gasto => {
-          <Gasto
-            key={gasto.id}
-            gasto={gasto}
-          />
-          console.log(gasto)
-
-        })
+        ?
+        (
+          <Text style={styles.noGastos}>No hay gasto</Text>
+        )
+        :
+        (
+          gastos.map(gasto => {
+            <Gasto
+              key={gasto.id}
+              gasto={gasto}
+            />
+            console.log(gasto)
+          }
+          )
+        )
       }
+
+
     </View>
   );
 };
@@ -29,8 +37,8 @@ const styles = StyleSheet.create({
   titulo: {
     textAlign: "center",
     color: "#64748b",
-    fontSize: 30,
-    fontWeight: "400",
+    fontSize: 40,
+    // fontWeight: "400",
     marginTop: 20
   },
   noGastos: {
